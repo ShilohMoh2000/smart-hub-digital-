@@ -1,539 +1,958 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Hub Digital</title>
-    <meta
-      name="description"
-      content="Smart Hub Digital helps businesses grow with modern digital solutions, websites, branding, and online strategy."
-    />
-    <style>
-      :root {
-        --bg: #0b1020;
-        --bg-soft: #121a2d;
-        --panel: #1b2640;
-        --primary: #5eead4;
-        --primary-strong: #2dd4bf;
-        --accent: #c084fc;
-        --text: #edf2ff;
-        --muted: #b8c1d9;
-        --border: rgba(255, 255, 255, 0.1);
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      * {
-        box-sizing: border-box;
-      }
+<title>Smart Hub Digital | Smarter Digital Solutions</title>
 
-      html {
-        scroll-behavior: smooth;
-      }
+<meta name="description" content="Smart Hub Digital helps brands grow through social media management, community management, digital marketing, and virtual assistant services.">
 
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(180deg, #0b1020 0%, #101827 100%);
-        color: var(--text);
-        line-height: 1.6;
-      }
+<style>
+:root {
+  --teal: #075B59;
+  --coral: #FF6B61;
+  --peach: #FFD6BD;
+  --cream: #FFF9F3;
+  --dark: #252B2A;
+  --white: #FFFFFF;
+  --muted: #66716E;
+}
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-      img {
-        max-width: 100%;
-        display: block;
-      }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.7;
+}
 
-      .container {
-        width: min(1120px, calc(100% - 32px));
-        margin: 0 auto;
-      }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(11, 16, 32, 0.8);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--border);
-      }
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
 
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 76px;
-      }
+/* NAVIGATION */
 
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-      }
+header {
+  background: var(--cream);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #eee5dc;
+}
 
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-        display: grid;
-        place-items: center;
-        color: #07111f;
-        font-weight: 800;
-      }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
 
-      .nav-links {
-        display: flex;
-        gap: 24px;
-        color: var(--muted);
-        font-size: 0.96rem;
-      }
+.logo {
+  color: var(--teal);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.2;
+}
 
-      .nav-links a:hover {
-        color: var(--text);
-      }
+.logo span {
+  display: block;
+  color: var(--coral);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
 
-      .nav-cta {
-        padding: 12px 20px;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
-        color: #05121d;
-        border-radius: 999px;
-        font-weight: 700;
-      }
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
 
-      .hero {
-        padding: 100px 0 72px;
-      }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+}
 
-      .hero .container {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        align-items: center;
-        gap: 48px;
-      }
+.nav-links a:hover {
+  color: var(--coral);
+}
 
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.02);
-        padding: 8px 14px;
-        border-radius: 999px;
-        color: var(--primary);
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-      }
+.nav-button {
+  background: var(--teal);
+  color: var(--white) !important;
+  padding: 11px 18px;
+  border-radius: 30px;
+}
 
-      h1 {
-        font-size: clamp(2.7rem, 5vw, 5rem);
-        line-height: 1.05;
-        margin: 18px 0 18px;
-      }
+/* HERO */
 
-      .hero p {
-        font-size: 1.08rem;
-        max-width: 610px;
-        color: var(--muted);
-      }
+.hero {
+  padding: 90px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 10%, #FFD6BD 0, transparent 30%),
+    var(--cream);
+}
 
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-        margin-top: 28px;
-      }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 55px;
+  align-items: center;
+}
 
-      .btn {
-        display: inline-block;
-        padding: 14px 22px;
-        border-radius: 999px;
-        font-weight: 700;
-        transition: transform 0.2s ease;
-      }
+.badge {
+  display: inline-block;
+  background: #E1F0E9;
+  color: var(--teal);
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
 
-      .btn:hover {
-        transform: translateY(-1px);
-      }
+.hero h1 {
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
 
-      .btn-primary {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
-        color: #07131d;
-      }
+.hero h1 span {
+  color: var(--coral);
+}
 
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--border);
-        color: var(--text);
-      }
+.hero p {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 540px;
+  margin-bottom: 30px;
+}
 
-      .hero-card {
-        background: linear-gradient(180deg, rgba(27, 38, 64, 0.95), rgba(18, 26, 45, 0.95));
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        padding: 24px;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-      }
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 
-      .mockup {
-        position: relative;
-        min-height: 500px;
-        background: linear-gradient(160deg, rgba(94, 234, 212, 0.12), rgba(192, 132, 252, 0.18));
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 22px;
-      }
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: 0.3s;
+}
 
-      .window-bar {
-        display: flex;
-        gap: 8px;
-        margin-bottom: 18px;
-      }
+.btn-primary {
+  background: var(--coral);
+  color: var(--white);
+}
 
-      .window-bar span {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        display: block;
-      }
+.btn-primary:hover {
+  background: #E9574F;
+  transform: translateY(-3px);
+}
 
-      .window-bar span:nth-child(1) { background: #ff5f57; }
-      .window-bar span:nth-child(2) { background: #febc2e; }
-      .window-bar span:nth-child(3) { background: #28c840; }
+.btn-secondary {
+  border: 1px solid var(--teal);
+  color: var(--teal);
+}
 
-      .graph {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 14px;
-        align-items: end;
-        height: 180px;
-        margin: 24px 0 20px;
-      }
+.btn-secondary:hover {
+  background: var(--teal);
+  color: var(--white);
+}
 
-      .graph div {
-        border-radius: 12px 12px 0 0;
-        background: linear-gradient(180deg, var(--primary), rgba(94, 234, 212, 0.2));
-      }
+.hero-art {
+  background: var(--teal);
+  border-radius: 35px;
+  padding: 35px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
 
-      .metrics {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        margin-top: 22px;
-      }
+.hero-art::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: var(--coral);
+  border-radius: 50%;
+  top: -70px;
+  right: -50px;
+}
 
-      .metric {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 16px;
-      }
+.hero-art::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background: var(--peach);
+  border-radius: 50%;
+  bottom: -75px;
+  left: -35px;
+}
 
-      .metric strong {
-        display: block;
-        font-size: 1.8rem;
-        margin-bottom: 4px;
-      }
+.art-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+}
 
-      .section {
-        padding: 80px 0;
-      }
+.art-content h2 {
+  font-size: 35px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
 
-      .section-header {
-        text-align: center;
-        margin-bottom: 42px;
-      }
+.art-content p {
+  color: #E2F0EB;
+  font-size: 15px;
+}
 
-      .section-header h2 {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin: 0 0 14px;
-      }
+.art-label {
+  display: inline-block;
+  background: var(--white);
+  color: var(--teal);
+  padding: 9px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 25px;
+}
 
-      .section-header p {
-        color: var(--muted);
-        max-width: 700px;
-        margin: 0 auto;
-      }
+/* TRUST STRIP */
 
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-      }
+.trust {
+  background: var(--white);
+  padding: 25px 0;
+  border-top: 1px solid #f1e8df;
+  border-bottom: 1px solid #f1e8df;
+}
 
-      .card {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-        padding: 26px 22px;
-      }
+.trust-content {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  text-align: center;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 700;
+}
 
-      .icon {
-        width: 54px;
-        height: 54px;
-        border-radius: 16px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, rgba(94, 234, 212, 0.2), rgba(192, 132, 252, 0.2));
-        color: var(--primary);
-        font-size: 1.5rem;
-        margin-bottom: 18px;
-      }
+/* GENERAL SECTIONS */
 
-      .card h3 {
-        margin: 0 0 12px;
-        font-size: 1.4rem;
-      }
+section {
+  padding: 85px 0;
+}
 
-      .card p {
-        margin: 0;
-        color: var(--muted);
-      }
+.section-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 45px;
+}
 
-      .about {
-        display: grid;
-        grid-template-columns: 0.95fr 1.05fr;
-        gap: 32px;
-        align-items: center;
-      }
+.eyebrow {
+  color: var(--coral);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
 
-      .about-panel {
-        padding: 30px;
-        border-radius: 28px;
-        background: linear-gradient(180deg, rgba(27, 38, 64, 0.8), rgba(18, 26, 45, 0.8));
-        border: 1px solid var(--border);
-      }
+.section-heading h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  color: var(--teal);
+  margin-bottom: 15px;
+}
 
-      .checklist {
-        list-style: none;
-        padding: 0;
-        margin: 22px 0 0;
-      }
+.section-heading p {
+  color: var(--muted);
+}
 
-      .checklist li {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 14px;
-        color: var(--muted);
-      }
+/* SERVICES */
 
-      .checklist li::before {
-        content: "✓";
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
-        background: rgba(94, 234, 212, 0.16);
-        color: var(--primary);
-        display: grid;
-        place-items: center;
-        font-weight: 700;
-      }
+.services {
+  background: var(--white);
+}
 
-      .cta {
-        text-align: center;
-        padding: 80px 0 100px;
-      }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
 
-      .cta-box {
-        background: linear-gradient(135deg, rgba(94, 234, 212, 0.12), rgba(192, 132, 252, 0.12));
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        padding: 42px 20px;
-      }
+.service-card {
+  padding: 30px;
+  border: 1px solid #F0E6DD;
+  border-radius: 22px;
+  background: var(--cream);
+  transition: 0.3s;
+}
 
-      .cta-box h2 {
-        margin: 0 0 12px;
-        font-size: clamp(2rem, 4vw, 3rem);
-      }
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--coral);
+  box-shadow: 0 15px 35px #075B5910;
+}
 
-      .cta-box p {
-        color: var(--muted);
-        margin: 0 auto 26px;
-        max-width: 640px;
-      }
+.service-icon {
+  width: 55px;
+  height: 55px;
+  background: var(--peach);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
 
-      .site-footer {
-        border-top: 1px solid var(--border);
-        padding: 22px 0 40px;
-        color: var(--muted);
-        text-align: center;
-      }
+.service-card h3 {
+  color: var(--teal);
+  font-size: 21px;
+  margin-bottom: 10px;
+}
 
-      @media (max-width: 900px) {
-        .hero .container,
-        .about,
-        .services-grid {
-          grid-template-columns: 1fr;
-        }
+.service-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
 
-        .nav-links {
-          display: none;
-        }
+/* ABOUT */
 
-        .hero {
-          padding-top: 70px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav">
-        <a href="#top" class="brand" aria-label="Smart Hub Digital home">
-          <span class="brand-mark">S</span>
-          <span>Smart Hub Digital</span>
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-box {
+  background: var(--peach);
+  border-radius: 30px;
+  padding: 45px 35px;
+}
+
+.about-box h3 {
+  font-size: 30px;
+  color: var(--teal);
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.about-box p {
+  color: #594B43;
+}
+
+.about-text h2 {
+  font-size: 38px;
+  color: var(--teal);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.check-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.check-list li {
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+.check-list li::before {
+  content: "✓";
+  color: var(--coral);
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+  background: #E8F1EC;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.work-card {
+  background: var(--white);
+  padding: 28px;
+  border-radius: 22px;
+}
+
+.work-number {
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--coral);
+  margin-bottom: 15px;
+}
+
+.work-card h3 {
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.work-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* PROCESS */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.process-card {
+  padding: 25px;
+  border-left: 4px solid var(--coral);
+  background: var(--white);
+  border-radius: 0 18px 18px 0;
+}
+
+.process-card h3 {
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.process-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* CONTACT */
+
+.contact {
+  background: var(--teal);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact .section-heading h2 {
+  color: var(--white);
+}
+
+.contact .section-heading p {
+  color: #D8E9E5;
+}
+
+.contact .eyebrow {
+  color: var(--peach);
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contact .btn-primary {
+  background: var(--coral);
+}
+
+.contact .btn-secondary {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.contact .btn-secondary:hover {
+  background: var(--white);
+  color: var(--teal);
+}
+
+.contact-details {
+  margin-top: 35px;
+  color: #D8E9E5;
+  font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #043F3E;
+  color: var(--white);
+  padding: 28px 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer p {
+  color: #D8E9E5;
+}
+
+footer strong {
+  color: var(--peach);
+}
+
+/* WHATSAPP FLOAT BUTTON */
+
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  background: #25D366;
+  color: white;
+  padding: 13px 19px;
+  border-radius: 35px;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 6px 20px #0002;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 800px) {
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .nav-button {
+    padding: 9px 12px;
+  }
+
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero-art {
+    min-height: 280px;
+  }
+
+  .portfolio-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    width: 91%;
+  }
+
+  header {
+    padding: 15px 0;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .logo span {
+    font-size: 9px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .nav-links a:first-child {
+    display: none;
+  }
+
+  .nav-button {
+    padding: 8px 10px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .about-box {
+    padding: 30px 25px;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+
+  .whatsapp-float {
+    right: 12px;
+    bottom: 12px;
+    padding: 11px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#home" class="logo">
+      Smart Hub Digital
+      <span>SMARTER DIGITAL SOLUTIONS</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-button">Let's Talk</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <span class="badge">Your Digital Growth Partner</span>
+
+      <h1>
+        Your ideas deserve
+        <span>smarter</span>
+        digital support.
+      </h1>
+
+      <p>
+        We help brands build their online presence, connect with
+        their audience, and grow with confidence through thoughtful
+        digital solutions.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary"
+           href="https://wa.me/2348083650865?text=Hello%20Smart%20Hub%20Digital%2C%20I%20would%20like%20to%20discuss%20your%20services.">
+          Let's Work Together →
         </a>
 
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <a href="#contact" class="nav-cta">Book a Call</a>
+        <a class="btn btn-secondary" href="#services">
+          Explore Services
+        </a>
       </div>
-    </header>
+    </div>
 
-    <main id="top">
-      <section class="hero">
-        <div class="container">
-          <div>
-            <span class="eyebrow">Digital Growth Studio</span>
-            <h1>Build a smarter online presence.</h1>
-            <p>
-              Smart Hub Digital helps brands thrive with modern strategy, polished websites,
-              digital marketing, and conversion-focused experiences that turn attention into action.
-            </p>
+    <div class="hero-art">
+      <div class="art-content">
+        <h2>One Hub.<br>Multiple Solutions.</h2>
 
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Get Started</a>
-              <a class="btn btn-secondary" href="#services">Explore Services</a>
-            </div>
-          </div>
+        <p>
+          Everything your brand needs to show up,
+          connect, and grow in the digital space.
+        </p>
 
-          <div class="hero-card" aria-label="Dashboard preview">
-            <div class="mockup">
-              <div class="window-bar">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+        <span class="art-label">Smarter Growth Starts Here</span>
+      </div>
+    </div>
 
-              <div class="graph" aria-hidden="true">
-                <div style="height: 28%"></div>
-                <div style="height: 40%"></div>
-                <div style="height: 58%"></div>
-                <div style="height: 66%"></div>
-                <div style="height: 90%"></div>
-                <div style="height: 76%"></div>
-                <div style="height: 98%"></div>
-              </div>
+  </div>
+</section>
 
-              <div class="metrics">
-                <div class="metric">
-                  <strong>+214%</strong>
-                  <span>Traffic</span>
-                </div>
-                <div class="metric">
-                  <strong>4.9/5</strong>
-                  <span>Client Rating</span>
-                </div>
-                <div class="metric">
-                  <strong>120+</strong>
-                  <span>Projects</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<div class="trust">
+  <div class="container trust-content">
+    <span>✓ Creative Solutions</span>
+    <span>✓ Reliable Support</span>
+    <span>✓ Audience Connection</span>
+    <span>✓ Growth-Focused</span>
+  </div>
+</div>
 
-      <section class="section" id="services">
-        <div class="container">
-          <div class="section-header">
-            <h2>What we do</h2>
-            <p>
-              We create digital experiences and strategies designed to help businesses attract,
-              engage, and convert customers online.
-            </p>
-          </div>
+<section class="services" id="services">
+  <div class="container">
 
-          <div class="services-grid">
-            <article class="card">
-              <div class="icon">✦</div>
-              <h3>Brand Strategy</h3>
-              <p>
-                Position your business with a clear identity, message, and market strategy that stands out.
-              </p>
-            </article>
+    <div class="section-heading">
+      <div class="eyebrow">What We Do</div>
 
-            <article class="card">
-              <div class="icon">▣</div>
-              <h3>Web Design</h3>
-              <p>
-                Responsive, high-converting websites built to reflect your brand and turn visitors into leads.
-              </p>
-            </article>
+      <h2>Digital solutions made simpler.</h2>
 
-            <article class="card">
-              <div class="icon">◎</div>
-              <h3>Digital Growth</h3>
-              <p>
-                Reach more customers through optimized campaigns, content, and performance marketing.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <p>
+        From managing your online presence to supporting your daily
+        operations, we help you focus on what matters most.
+      </p>
+    </div>
 
-      <section class="section" id="about">
-        <div class="container about">
-          <div class="about-panel">
-            <span class="eyebrow">Why choose us</span>
-            <h2>Built for businesses ready to grow.</h2>
-            <ul class="checklist">
-              <li>Clear strategy tailored to your goals</li>
-              <li>Modern, user-focused digital experiences</li>
-              <li>Reliable support from concept to launch</li>
-              <li>Results-driven thinking and execution</li>
-            </ul>
-          </div>
+    <div class="service-grid">
 
-          <div>
-            <div class="section-header" style="text-align: left; margin-bottom: 20px;">
-              <h2>We turn ideas into momentum.</h2>
-            </div>
-            <p style="color: var(--muted); margin: 0;">
-              Smart Hub Digital partners with businesses that want more than just an online presence.
-              We help you build trust, improve visibility, and create stronger customer engagement through
-              thoughtful digital solutions.
-            </p>
-          </div>
-        </div>
-      </section>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media Management</h3>
+        <p>
+          We help brands stay consistent online through content
+          planning, scheduling, audience engagement, and account support.
+        </p>
+      </div>
 
-      <section class="cta" id="contact">
-        <div class="container">
-          <div class="cta-box">
-            <h2>Ready to grow your digital presence?</h2>
-            <p>
-              Let’s help you create a stronger brand, a better website, and a clearer path to customer growth.
-            </p>
-            <a class="btn btn-primary" href="mailto:hello@smarthubdigital.com">hello@smarthubdigital.com</a>
-          </div>
-        </div>
-      </section>
-    </main>
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <h3>Community Management</h3>
+        <p>
+          We help you nurture your online community, respond to
+          messages, encourage conversations, and build relationships.
+        </p>
+      </div>
 
-    <footer class="site-footer">
-      <div class="container">© 2026 Smart Hub Digital. All rights reserved.</div>
-    </footer>
-  </body>
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Digital Marketing</h3>
+        <p>
+          We support your brand's online visibility through digital
+          campaigns, marketing strategy, and audience-focused content.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Virtual Assistant</h3>
+        <p>
+          We provide remote administrative support, online research,
+          scheduling, data organisation, and everyday business assistance.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+
+    <div class="about-box">
+      <h3>Good ideas need the right digital support.</h3>
+
+      <p>
+        We believe growing a brand should feel less overwhelming.
+        Our goal is to make digital tasks easier so businesses can
+        spend more time building something meaningful.
+      </p>
+    </div>
+
+    <div class="about-text">
+      <div class="eyebrow">Get To Know Us</div>
+
+      <h2>Your partner in smarter digital growth.</h2>
+
+      <p>
+        Smart Hub Digital is a digital support brand helping
+        businesses, entrepreneurs, and growing brands manage their
+        online presence and everyday digital tasks.
+      </p>
+
+      <p>
+        We combine creativity, organisation, and a people-first
+        approach to deliver solutions tailored to your goals.
+      </p>
+
+      <ul class="check-list">
+        <li>Friendly and professional support</li>
+        <li>Solutions tailored to your needs</li>
+        <li>Focus on consistency and connection</li>
+        <li>One hub for multiple digital needs</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="portfolio" id="work">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Our Work</div>
+
+      <h2>Ideas turned into digital solutions.</h2>
+
+      <p>
+        Explore examples of the kind of support we can provide
+        for businesses and growing brands.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="work-card">
+        <div class="work-number">01</div>
+        <h3>Social Media Content</h3>
+        <p>
+          Content planning and creative direction designed to help
+          brands communicate consistently with their audience.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <div class="work-number">02</div>
+        <h3>Community Support</h3>
+        <p>
+          Audience engagement, community communication, and
+          organised support for online groups.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <div class="work-number">03</div>
+        <h3>Digital Marketing</h3>
+        <p>
+          Marketing plans and digital activities designed to improve
+          online visibility and support business goals.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">How We Work</div>
+
+      <h2>Simple steps. Smarter solutions.</h2>
+
+      <p>
+        Working with us starts with a conversation and a clear
+        understanding of what your brand needs.
+      </p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card">
+        <h3>01. Let's Talk</h3>
+        <p>
+          Tell us about your brand, your goals, and the support
+          you're looking for.
+        </p>
+      </div>
+
+      <div class="process-card">
+        <h3>02. Plan Together</h3>
+        <p>
+          We discuss the right services and agree on a practical
+          approach for your needs.
+        </p>
+      </div>
+
+      <div class="process-card">
+        <h3>03. Grow Smarter</h3>
+        <p>
+          We get to work on the agreed tasks and support your
+          brand's digital journey.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Let's Connect</div>
+
+      <h2>Ready to make your next move?</h2>
+
+      <p>
+        Whether you're building a new brand or improving an existing
+        one, let's discuss how Smart Hub Digital can support you.
+      </p>
+    </div>
+
+    <div class="contact-buttons">
+
+      <a class="btn btn-primary"
+         href="https://wa.me/2348083650865?text=Hello%20Smart%20Hub%20Digital%2C%20I%20am%20interested%20in%20your%20services.">
+        Chat on WhatsApp →
+      </a>
+
+      <a class="btn btn-secondary"
+         href="https://wa.me/2347031543817?text=Hello%20Smart%20Hub%20Digital%2C%20I%20would%20like%20to%20make%20an%20enquiry.">
+        Contact Our Team
+      </a>
+
+    </div>
+
+    <div class="contact-details">
+      <p>WhatsApp: 0808 365 0865 | 0703 154 3817</p>
+      <p>Smart support. Thoughtful solutions. Smarter growth.</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>
+      © 2026 <strong>Smart Hub Digital.</strong>
+      One Hub. Multiple Solutions. Smarter Growth.
+    </p>
+  </div>
+</footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/2348083650865?text=Hello%20Smart%20Hub%20Digital"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with Smart Hub Digital on WhatsApp">
+  WhatsApp ↗
+</a>
+
+</body>
 </html>
