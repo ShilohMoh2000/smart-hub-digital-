@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Hub Digital</title>
+    <meta
+      name="description"
+      content="Smart Hub Digital helps businesses grow with modern digital solutions, websites, branding, and online strategy."
+    />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --bg-soft: #121a2d;
+        --panel: #1b2640;
+        --primary: #5eead4;
+        --primary-strong: #2dd4bf;
+        --accent: #c084fc;
+        --text: #edf2ff;
+        --muted: #b8c1d9;
+        --border: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #0b1020 0%, #101827 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(11, 16, 32, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 76px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        display: grid;
+        place-items: center;
+        color: #07111f;
+        font-weight: 800;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .nav-cta {
+        padding: 12px 20px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+        color: #05121d;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .hero {
+        padding: 100px 0 72px;
+      }
+
+      .hero .container {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.02);
+        padding: 8px 14px;
+        border-radius: 999px;
+        color: var(--primary);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 5vw, 5rem);
+        line-height: 1.05;
+        margin: 18px 0 18px;
+      }
+
+      .hero p {
+        font-size: 1.08rem;
+        max-width: 610px;
+        color: var(--muted);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+        color: #07131d;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+
+      .hero-card {
+        background: linear-gradient(180deg, rgba(27, 38, 64, 0.95), rgba(18, 26, 45, 0.95));
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 24px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+      }
+
+      .mockup {
+        position: relative;
+        min-height: 500px;
+        background: linear-gradient(160deg, rgba(94, 234, 212, 0.12), rgba(192, 132, 252, 0.18));
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 22px;
+      }
+
+      .window-bar {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      .window-bar span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .window-bar span:nth-child(1) { background: #ff5f57; }
+      .window-bar span:nth-child(2) { background: #febc2e; }
+      .window-bar span:nth-child(3) { background: #28c840; }
+
+      .graph {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 14px;
+        align-items: end;
+        height: 180px;
+        margin: 24px 0 20px;
+      }
+
+      .graph div {
+        border-radius: 12px 12px 0 0;
+        background: linear-gradient(180deg, var(--primary), rgba(94, 234, 212, 0.2));
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .metric {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.8rem;
+        margin-bottom: 4px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 42px;
+      }
+
+      .section-header h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin: 0 0 14px;
+      }
+
+      .section-header p {
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 26px 22px;
+      }
+
+      .icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, rgba(94, 234, 212, 0.2), rgba(192, 132, 252, 0.2));
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-size: 1.4rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .about-panel {
+        padding: 30px;
+        border-radius: 28px;
+        background: linear-gradient(180deg, rgba(27, 38, 64, 0.8), rgba(18, 26, 45, 0.8));
+        border: 1px solid var(--border);
+      }
+
+      .checklist {
+        list-style: none;
+        padding: 0;
+        margin: 22px 0 0;
+      }
+
+      .checklist li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+        color: var(--muted);
+      }
+
+      .checklist li::before {
+        content: "✓";
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(94, 234, 212, 0.16);
+        color: var(--primary);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+      }
+
+      .cta {
+        text-align: center;
+        padding: 80px 0 100px;
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, rgba(94, 234, 212, 0.12), rgba(192, 132, 252, 0.12));
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 42px 20px;
+      }
+
+      .cta-box h2 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      .cta-box p {
+        color: var(--muted);
+        margin: 0 auto 26px;
+        max-width: 640px;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--border);
+        padding: 22px 0 40px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .hero .container,
+        .about,
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 70px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="Smart Hub Digital home">
+          <span class="brand-mark">S</span>
+          <span>Smart Hub Digital</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-cta">Book a Call</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <div>
+            <span class="eyebrow">Digital Growth Studio</span>
+            <h1>Build a smarter online presence.</h1>
+            <p>
+              Smart Hub Digital helps brands thrive with modern strategy, polished websites,
+              digital marketing, and conversion-focused experiences that turn attention into action.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Get Started</a>
+              <a class="btn btn-secondary" href="#services">Explore Services</a>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Dashboard preview">
+            <div class="mockup">
+              <div class="window-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="graph" aria-hidden="true">
+                <div style="height: 28%"></div>
+                <div style="height: 40%"></div>
+                <div style="height: 58%"></div>
+                <div style="height: 66%"></div>
+                <div style="height: 90%"></div>
+                <div style="height: 76%"></div>
+                <div style="height: 98%"></div>
+              </div>
+
+              <div class="metrics">
+                <div class="metric">
+                  <strong>+214%</strong>
+                  <span>Traffic</span>
+                </div>
+                <div class="metric">
+                  <strong>4.9/5</strong>
+                  <span>Client Rating</span>
+                </div>
+                <div class="metric">
+                  <strong>120+</strong>
+                  <span>Projects</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-header">
+            <h2>What we do</h2>
+            <p>
+              We create digital experiences and strategies designed to help businesses attract,
+              engage, and convert customers online.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="card">
+              <div class="icon">✦</div>
+              <h3>Brand Strategy</h3>
+              <p>
+                Position your business with a clear identity, message, and market strategy that stands out.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">▣</div>
+              <h3>Web Design</h3>
+              <p>
+                Responsive, high-converting websites built to reflect your brand and turn visitors into leads.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">◎</div>
+              <h3>Digital Growth</h3>
+              <p>
+                Reach more customers through optimized campaigns, content, and performance marketing.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container about">
+          <div class="about-panel">
+            <span class="eyebrow">Why choose us</span>
+            <h2>Built for businesses ready to grow.</h2>
+            <ul class="checklist">
+              <li>Clear strategy tailored to your goals</li>
+              <li>Modern, user-focused digital experiences</li>
+              <li>Reliable support from concept to launch</li>
+              <li>Results-driven thinking and execution</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="section-header" style="text-align: left; margin-bottom: 20px;">
+              <h2>We turn ideas into momentum.</h2>
+            </div>
+            <p style="color: var(--muted); margin: 0;">
+              Smart Hub Digital partners with businesses that want more than just an online presence.
+              We help you build trust, improve visibility, and create stronger customer engagement through
+              thoughtful digital solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="contact">
+        <div class="container">
+          <div class="cta-box">
+            <h2>Ready to grow your digital presence?</h2>
+            <p>
+              Let’s help you create a stronger brand, a better website, and a clearer path to customer growth.
+            </p>
+            <a class="btn btn-primary" href="mailto:hello@smarthubdigital.com">hello@smarthubdigital.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© 2026 Smart Hub Digital. All rights reserved.</div>
+    </footer>
+  </body>
+</html>
